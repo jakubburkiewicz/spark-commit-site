@@ -1,0 +1,43 @@
+---
+const features = [
+  {
+    title: 'Local-only',
+    description:
+      'Your staged diff goes through the Claude CLI running on your machine. No proxy server, no telemetry, no third-party sees your code.',
+  },
+  {
+    title: 'Bring your own Claude',
+    description:
+      'Uses the Claude Code CLI you already have installed and authenticated. No extra subscription, no separate API key.',
+  },
+  {
+    title: 'Customizable prompt',
+    description:
+      'Swap the default instructions for conventional commits, emoji, a specific language — or any format your team prefers.',
+  },
+  {
+    title: 'Multi-repository',
+    description:
+      'Works with monorepos and multi-root workspaces. Click the sparkle on the repo you want, and the extension targets only that one.',
+  },
+];
+---
+
+<section class="border-t border-ink-900/10 bg-ink-50 dark:border-ink-50/10 dark:bg-ink-900/40">
+  <div class="mx-auto max-w-6xl px-6 py-20 lg:py-28">
+    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">What you get</h2>
+
+    <ul class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        features.map((feature) => (
+          <li class="flex flex-col rounded-2xl border border-ink-900/10 bg-ink-0 p-6 dark:border-ink-50/10 dark:bg-ink-950">
+            <h3 class="text-lg font-semibold text-sparkle">{feature.title}</h3>
+            <p class="mt-3 text-base text-ink-900/75 dark:text-ink-50/75">
+              {feature.description}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
