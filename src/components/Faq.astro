@@ -1,14 +1,14 @@
 ---
 const faqs = [
   {
-    question: 'Does Spark Commit send my code to Anthropic?',
+    question: 'Where does my code go?',
     answer:
-      'No. Only the staged diff is passed to the Claude CLI running on your machine, using your own account. Nothing touches any third-party server besides the one Claude CLI normally talks to.',
+      'To Anthropic — that is how Claude generates anything. Spark Commit itself makes no network requests. It passes your staged diff to the claude CLI on your machine, which sends it to Anthropic under your own account and their privacy policy. What Spark Commit does not do: run proxies, add telemetry, collect crash reports, or touch any server of its own.',
   },
   {
     question: 'Do I need a paid Claude account?',
     answer:
-      'You need a working Claude Code CLI installation. Any Anthropic plan that gives you CLI access works. Spark Commit adds no cost of its own.',
+      'You need a working Claude CLI — any Anthropic plan under which `claude --version` runs in your terminal will work with Spark Commit. The extension adds no cost of its own.',
   },
   {
     question: 'Does it work in Cursor, VSCodium, or Windsurf?',

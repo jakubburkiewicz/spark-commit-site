@@ -31,13 +31,16 @@ import Footer from '../components/Footer.astro';
       <section>
         <h2 class="text-xl font-semibold text-sparkle">The extension</h2>
         <p class="mt-3 text-ink-900/80 dark:text-ink-50/80">
-          Spark Commit reads your staged diff locally and passes it to the Claude CLI running
-          on your machine. The CLI then communicates with Anthropic's API using
-          <em>your</em> account and credentials — the extension never has or sees your key.
+          Spark Commit itself makes no network connections. It spawns the Claude CLI process
+          locally, which then communicates with Anthropic's API under <em>your</em> own account
+          — the same network path you would use by running <code
+            class="font-mono text-sm">claude</code
+          > in a terminal yourself. The extension never has or sees your API key.
         </p>
         <p class="mt-3 text-ink-900/80 dark:text-ink-50/80">
-          The extension does not contact any server on its own. It does not collect usage
-          telemetry, crash reports, error traces, or any metadata.
+          Spark Commit adds no proxies, no telemetry, no crash reports, no error traces and no
+          metadata of its own. Your staged diff — the one thing it handles — goes into the CLI
+          call and nowhere else.
         </p>
       </section>
 
