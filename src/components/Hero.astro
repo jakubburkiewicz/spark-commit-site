@@ -1,0 +1,96 @@
+---
+const marketplaceUrl =
+  'https://marketplace.visualstudio.com/items?itemName=JakubBurkiewicz.spark-commit';
+const githubUrl = 'https://github.com/jakubburkiewicz/spark-commit';
+---
+
+<section class="relative overflow-hidden">
+  <div
+    class="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 py-20 lg:grid-cols-[1.2fr_1fr] lg:gap-16 lg:py-32"
+  >
+    <div class="flex flex-col">
+      <h1 class="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
+        Spark <span class="text-sparkle">Commit</span>
+      </h1>
+
+      <p class="mt-6 text-xl text-ink-900 dark:text-ink-50 sm:text-2xl">
+        AI-powered git commit messages in VS Code, powered by your own Claude CLI.
+      </p>
+
+      <p class="mt-4 text-base text-ink-900/70 dark:text-ink-50/70">
+        Your diff never leaves your machine. Your account, your key.
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a
+          href={marketplaceUrl}
+          class="rounded-xl bg-sparkle px-6 py-3 font-medium text-ink-950 shadow-[0_8px_24px_-8px_rgba(255,208,107,0.55)] transition hover:scale-[1.02] hover:shadow-[0_12px_32px_-8px_rgba(255,208,107,0.7)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sparkle"
+        >
+          Install from Marketplace
+        </a>
+        <a
+          href={githubUrl}
+          class="rounded-xl border border-ink-900/20 px-6 py-3 font-medium text-ink-900 transition hover:bg-ink-900/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sparkle dark:border-ink-50/20 dark:text-ink-50 dark:hover:bg-ink-50/5"
+        >
+          View on GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-center">
+      <svg
+        class="sparkle-hero h-auto w-full max-w-sm"
+        viewBox="0 0 160 160"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <path
+          class="sparkle-a"
+          d="M80 40 L92 76 L128 88 L92 100 L80 136 L68 100 L32 88 L68 76 Z"
+          fill="#ffd06b"
+        ></path>
+        <path
+          class="sparkle-b"
+          d="M36 22 L42 40 L60 46 L42 52 L36 70 L30 52 L12 46 L30 40 Z"
+          fill="#ffd06b"
+        ></path>
+        <path
+          class="sparkle-c"
+          d="M124 12 L128 26 L142 30 L128 34 L124 48 L120 34 L106 30 L120 26 Z"
+          fill="#ffd06b"
+        ></path>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<style>
+  .sparkle-hero path {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .sparkle-a {
+    animation: sparkle-pulse 3s ease-in-out infinite;
+  }
+
+  .sparkle-b {
+    animation: sparkle-pulse 3s ease-in-out 0.6s infinite;
+  }
+
+  .sparkle-c {
+    animation: sparkle-pulse 3s ease-in-out 1.2s infinite;
+  }
+
+  @keyframes sparkle-pulse {
+    0%,
+    100% {
+      opacity: 0.55;
+      transform: scale(0.92);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.08);
+    }
+  }
+</style>
