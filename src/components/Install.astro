@@ -1,0 +1,120 @@
+---
+const marketplaceUrl =
+  'https://marketplace.visualstudio.com/items?itemName=JakubBurkiewicz.spark-commit';
+const githubUrl = 'https://github.com/jakubburkiewicz/spark-commit';
+const cliCommand = 'code --install-extension JakubBurkiewicz.spark-commit';
+---
+
+<section class="border-t border-ink-900/10 bg-ink-50 dark:border-ink-50/10 dark:bg-ink-900/40">
+  <div class="mx-auto max-w-3xl px-6 py-20 text-center lg:py-28">
+    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Get started in 30 seconds</h2>
+
+    <p class="mt-4 text-base text-ink-900/75 dark:text-ink-50/75">
+      One click through the Marketplace, or the command line — pick your style.
+    </p>
+
+    <div class="mt-10 flex justify-center">
+      <a
+        href={marketplaceUrl}
+        class="rounded-xl bg-sparkle px-8 py-4 text-lg font-medium text-ink-950 shadow-[0_8px_24px_-8px_rgba(255,208,107,0.55)] transition hover:scale-[1.02] hover:shadow-[0_12px_32px_-8px_rgba(255,208,107,0.7)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sparkle"
+      >
+        Install from Marketplace
+      </a>
+    </div>
+
+    <div class="mt-10 flex items-center justify-center gap-3 text-sm text-ink-900/60 dark:text-ink-50/60">
+      <span class="h-px w-8 bg-ink-900/20 dark:bg-ink-50/20"></span>
+      <span>or</span>
+      <span class="h-px w-8 bg-ink-900/20 dark:bg-ink-50/20"></span>
+    </div>
+
+    <div
+      class="mx-auto mt-6 min-w-0 max-w-xl rounded-2xl border border-ink-900/10 bg-ink-0 p-1 text-left shadow-lg dark:border-ink-50/10 dark:bg-ink-950"
+    >
+      <div class="flex items-center gap-2 border-b border-ink-900/10 px-4 py-3 dark:border-ink-50/10">
+        <span class="inline-flex h-3 w-3 rounded-full bg-ink-900/15 dark:bg-ink-50/15"></span>
+        <span class="inline-flex h-3 w-3 rounded-full bg-ink-900/15 dark:bg-ink-50/15"></span>
+        <span class="inline-flex h-3 w-3 rounded-full bg-ink-900/15 dark:bg-ink-50/15"></span>
+        <span class="ml-3 font-mono text-xs text-ink-900/60 dark:text-ink-50/60">terminal</span>
+        <button
+          type="button"
+          data-copy-target="install-command"
+          class="copy-button ml-auto inline-flex h-7 w-7 cursor-pointer items-center justify-center rounded-md border border-ink-900/10 text-ink-900/60 transition hover:border-sparkle hover:text-sparkle focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sparkle dark:border-ink-50/10 dark:text-ink-50/60"
+          aria-label="Copy install command"
+        >
+          <svg
+            class="icon-copy h-4 w-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <svg
+            class="icon-done h-4 w-4 text-sparkle"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </button>
+      </div>
+      <pre
+        class="overflow-x-auto p-5 font-mono text-sm leading-relaxed text-ink-900 dark:text-ink-50"><code><span class="text-sparkle">$</span> <span id="install-command">{cliCommand}</span></code></pre>
+    </div>
+
+    <p class="mt-10 text-sm text-ink-900/60 dark:text-ink-50/60">
+      Prefer to inspect the source? <a
+        href={githubUrl}
+        class="underline decoration-sparkle decoration-2 underline-offset-4 hover:text-sparkle"
+        >Build from source on GitHub</a
+      >.
+    </p>
+  </div>
+</section>
+
+<style>
+  .copy-button .icon-done {
+    display: none;
+  }
+
+  .copy-button.is-copied .icon-copy {
+    display: none;
+  }
+
+  .copy-button.is-copied .icon-done {
+    display: block;
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-copy-target]').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const targetId = button.dataset.copyTarget;
+      if (!targetId) return;
+      const target = document.getElementById(targetId);
+      if (!target || !target.textContent) return;
+
+      try {
+        await navigator.clipboard.writeText(target.textContent.trim());
+      } catch {
+        return;
+      }
+
+      button.classList.add('is-copied');
+      setTimeout(() => {
+        button.classList.remove('is-copied');
+      }, 1500);
+    });
+  });
+</script>
