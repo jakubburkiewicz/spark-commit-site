@@ -1,0 +1,45 @@
+---
+const steps = [
+  {
+    title: 'Stage your changes',
+    description:
+      'Use git add or the Source Control panel to stage the work you want to describe.',
+  },
+  {
+    title: 'Click the sparkle',
+    description:
+      'An icon appears in the Source Control panel title. One click kicks off generation.',
+  },
+  {
+    title: 'Review and commit',
+    description:
+      'Claude drafts a message into the commit field. Edit if needed, then commit as usual.',
+  },
+];
+---
+
+<section class="border-t border-ink-900/10 dark:border-ink-50/10">
+  <div class="mx-auto max-w-6xl px-6 py-20 lg:py-28">
+    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">How it works</h2>
+    <p class="mt-4 max-w-2xl text-base text-ink-900/70 dark:text-ink-50/70">
+      Three steps, zero surprises. No extra tooling, no sign-up, no data sent anywhere besides
+      your own Claude CLI.
+    </p>
+
+    <ol class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+      {
+        steps.map((step, index) => (
+          <li class="flex flex-col">
+            <span class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-sparkle text-lg font-semibold text-sparkle">
+              {index + 1}
+            </span>
+            <h3 class="mt-5 text-xl font-semibold">{step.title}</h3>
+            <p class="mt-2 text-base text-ink-900/70 dark:text-ink-50/70">
+              {step.description}
+            </p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
