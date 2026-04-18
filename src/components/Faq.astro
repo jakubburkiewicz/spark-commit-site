@@ -1,0 +1,66 @@
+---
+const faqs = [
+  {
+    question: 'Does Spark Commit send my code to Anthropic?',
+    answer:
+      'No. Only the staged diff is passed to the Claude CLI running on your machine, using your own account. Nothing touches any third-party server besides the one Claude CLI normally talks to.',
+  },
+  {
+    question: 'Do I need a paid Claude account?',
+    answer:
+      'You need a working Claude Code CLI installation. Any Anthropic plan that gives you CLI access works. Spark Commit adds no cost of its own.',
+  },
+  {
+    question: 'Does it work in Cursor, VSCodium, or Windsurf?',
+    answer:
+      'It should work in any VS Code fork that supports the standard extension API and the built-in git extension. Not all combinations are explicitly tested — please open an issue if something breaks.',
+  },
+  {
+    question: 'What about other AI providers?',
+    answer:
+      'Claude-only today, but the extension is designed to accept other CLIs in the future. Track the roadmap on GitHub.',
+  },
+  {
+    question: 'How do I customise the commit style?',
+    answer:
+      'Open settings, search for Spark Commit and edit sparkCommit.prompt. The value is a free-form template — use {diff} where the staged diff should be interpolated. Conventional commits, emoji, a different language — all fair game.',
+  },
+];
+---
+
+<section class="border-t border-ink-900/10 dark:border-ink-50/10">
+  <div class="mx-auto max-w-3xl px-6 py-20 lg:py-28">
+    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Frequently asked</h2>
+
+    <div class="mt-10 divide-y divide-ink-900/10 dark:divide-ink-50/10">
+      {
+        faqs.map((faq, index) => (
+          <details class="faq-item group py-5" open={index === 0}>
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-medium text-ink-900 transition hover:text-sparkle dark:text-ink-50">
+              <span>{faq.question}</span>
+              <svg
+                class="h-5 w-5 shrink-0 text-ink-900/50 transition-transform duration-200 group-open:rotate-180 dark:text-ink-50/50"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </summary>
+            <p class="mt-3 text-base text-ink-900/75 dark:text-ink-50/75">{faq.answer}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+</style>
