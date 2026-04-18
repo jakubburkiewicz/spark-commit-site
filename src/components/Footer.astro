@@ -1,0 +1,50 @@
+---
+const githubUrl = 'https://github.com/jakubburkiewicz/spark-commit';
+const issuesUrl = `${githubUrl}/issues`;
+const sponsorUrl = 'https://github.com/sponsors/jakubburkiewicz';
+const authorUrl = 'https://github.com/jakubburkiewicz';
+const currentYear = new Date().getFullYear();
+
+const links = [
+  { label: 'GitHub', href: githubUrl },
+  { label: 'Issues', href: issuesUrl },
+  { label: 'Sponsor', href: sponsorUrl },
+  { label: 'Privacy', href: '/privacy' },
+];
+---
+
+<footer class="border-t border-ink-900/10 bg-ink-50 dark:border-ink-50/10 dark:bg-ink-900/40">
+  <div class="mx-auto max-w-6xl px-6 py-12 lg:py-16">
+    <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+      <div class="text-sm text-ink-900/70 dark:text-ink-50/70">
+        <p>
+          Built by <a
+            href={authorUrl}
+            class="text-ink-900 hover:text-sparkle dark:text-ink-50">Jakub Burkiewicz</a
+          >. MIT licensed.
+        </p>
+        <p class="mt-1 text-ink-900/50 dark:text-ink-50/50">
+          © {currentYear} Spark Commit. Not affiliated with Anthropic.
+        </p>
+      </div>
+
+      <nav aria-label="Footer" class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+        {
+          links.map((link) => (
+            <a
+              href={link.href}
+              class="text-ink-900/70 hover:text-sparkle dark:text-ink-50/70"
+            >
+              {link.label}
+            </a>
+          ))
+        }
+      </nav>
+    </div>
+
+    <p class="mt-10 text-xs text-ink-900/40 dark:text-ink-50/40">
+      Claude and Anthropic are trademarks of Anthropic, PBC. Spark Commit is an independent,
+      unofficial third-party tool.
+    </p>
+  </div>
+</footer>
