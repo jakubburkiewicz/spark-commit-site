@@ -1,0 +1,83 @@
+---
+import Base from '../layouts/Base.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base
+  title="Privacy — Spark Commit"
+  description="What data Spark Commit collects, and where it goes. Spoiler: nothing leaves your machine."
+>
+  <main class="mx-auto max-w-3xl px-6 py-20 lg:py-28">
+    <a
+      href="/"
+      class="text-sm text-ink-900/60 hover:text-sparkle dark:text-ink-50/60">← Back to home</a
+    >
+
+    <h1 class="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">Privacy</h1>
+
+    <p class="mt-4 text-sm text-ink-900/60 dark:text-ink-50/60">Last updated: 18 April 2026.</p>
+
+    <div class="prose-spark mt-10 space-y-6 text-base text-ink-900 dark:text-ink-50">
+      <section>
+        <h2 class="text-xl font-semibold text-sparkle">This website</h2>
+        <p class="mt-3 text-ink-900/80 dark:text-ink-50/80">
+          sparkcommit.com is a static site. It sets no cookies, runs no analytics, loads no
+          third-party trackers. Your IP address is visible to the hosting provider
+          (Cloudflare Pages) for the duration of serving a request and isn't stored by this
+          site.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-sparkle">The extension</h2>
+        <p class="mt-3 text-ink-900/80 dark:text-ink-50/80">
+          Spark Commit reads your staged diff locally and passes it to the Claude CLI running
+          on your machine. The CLI then communicates with Anthropic's API using
+          <em>your</em> account and credentials — the extension never has or sees your key.
+        </p>
+        <p class="mt-3 text-ink-900/80 dark:text-ink-50/80">
+          The extension does not contact any server on its own. It does not collect usage
+          telemetry, crash reports, error traces, or any metadata.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-sparkle">Anthropic's side</h2>
+        <p class="mt-3 text-ink-900/80 dark:text-ink-50/80">
+          The Claude CLI handles data according to <a
+            href="https://www.anthropic.com/legal/privacy"
+            class="underline decoration-sparkle decoration-2 underline-offset-4 hover:text-sparkle"
+            >Anthropic's privacy policy</a
+          >. Spark Commit has no visibility into or influence over that path — it's the same
+          path you'd use by typing <code class="font-mono text-sm">claude</code> in your
+          terminal yourself.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-sparkle">If this ever changes</h2>
+        <p class="mt-3 text-ink-900/80 dark:text-ink-50/80">
+          If analytics, crash reports, or any form of telemetry are ever added, the
+          introduction will be documented here, announced in the <a
+            href="https://github.com/jakubburkiewicz/spark-commit/blob/main/CHANGELOG.md"
+            class="underline decoration-sparkle decoration-2 underline-offset-4 hover:text-sparkle"
+            >CHANGELOG</a
+          > and visible in git history of both the extension and this site. You can always
+          audit the current state — the source is open.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-sparkle">Contact</h2>
+        <p class="mt-3 text-ink-900/80 dark:text-ink-50/80">
+          Privacy concerns, corrections, questions — open an issue on <a
+            href="https://github.com/jakubburkiewicz/spark-commit/issues"
+            class="underline decoration-sparkle decoration-2 underline-offset-4 hover:text-sparkle"
+            >GitHub</a
+          >.
+        </p>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Base>
