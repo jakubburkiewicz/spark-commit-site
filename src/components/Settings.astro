@@ -1,0 +1,65 @@
+---
+const settingsJson = `{
+  "sparkCommit.cliPath": "/Users/you/.local/bin/claude",
+  "sparkCommit.model": "sonnet",
+  "sparkCommit.prompt": "Write the commit message as a haiku (three lines, 5-7-5 syllables). Imperative mood. No markdown.\\n\\n{diff}"
+}`;
+
+const settings = [
+  {
+    key: 'sparkCommit.cliPath',
+    description:
+      'Absolute path to your Claude CLI binary. Set this if VS Code can’t find `claude` on PATH (common on macOS).',
+  },
+  {
+    key: 'sparkCommit.model',
+    description:
+      'Model passed to the Claude CLI via --model. Shortcut (sonnet, opus, haiku) or exact version. Empty = CLI default.',
+  },
+  {
+    key: 'sparkCommit.prompt',
+    description:
+      'Prompt template. {diff} is replaced with the staged diff. Missing {diff} triggers a safe fallback — the diff is appended.',
+  },
+];
+---
+
+<section class="border-t border-ink-900/10 dark:border-ink-50/10">
+  <div class="mx-auto max-w-6xl px-6 py-20 lg:py-28">
+    <div class="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-start">
+      <div>
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Tune it to your taste</h2>
+        <p class="mt-4 text-base text-ink-900/70 dark:text-ink-50/70">
+          Three settings, all optional. Defaults work out of the box — change them when you want
+          conventional commits, a different model, or a non-standard CLI path.
+        </p>
+
+        <dl class="mt-8 space-y-6">
+          {
+            settings.map((setting) => (
+              <div>
+                <dt class="font-mono text-sm text-sparkle">{setting.key}</dt>
+                <dd class="mt-1 text-base text-ink-900/75 dark:text-ink-50/75">
+                  {setting.description}
+                </dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+
+      <div class="min-w-0 rounded-2xl border border-ink-900/10 bg-ink-0 p-1 shadow-lg dark:border-ink-50/10 dark:bg-ink-950">
+        <div class="flex items-center gap-2 border-b border-ink-900/10 px-4 py-3 dark:border-ink-50/10">
+          <span class="inline-flex h-3 w-3 rounded-full bg-ink-900/15 dark:bg-ink-50/15"></span>
+          <span class="inline-flex h-3 w-3 rounded-full bg-ink-900/15 dark:bg-ink-50/15"></span>
+          <span class="inline-flex h-3 w-3 rounded-full bg-ink-900/15 dark:bg-ink-50/15"></span>
+          <span class="ml-3 font-mono text-xs text-ink-900/60 dark:text-ink-50/60"
+            >settings.json</span
+          >
+        </div>
+        <pre
+          class="overflow-x-auto p-5 font-mono text-sm leading-relaxed text-ink-900 dark:text-ink-50"><code>{settingsJson}</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
