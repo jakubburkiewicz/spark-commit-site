@@ -1,0 +1,24 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glow" cx="30%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#ffd06b" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0b0d10" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0b0d10"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <g transform="translate(180 180)">
+    <path d="M110 50 L128 112 L190 130 L128 148 L110 210 L92 148 L30 130 L92 112 Z" fill="#ffd06b"/>
+    <path d="M50 30 L57 54 L81 61 L57 68 L50 92 L43 68 L19 61 L43 54 Z" fill="#ffd06b" opacity="0.85"/>
+    <path d="M172 20 L177 36 L193 41 L177 46 L172 62 L167 46 L151 41 L167 36 Z" fill="#ffd06b" opacity="0.85"/>
+  </g>
+
+  <text x="450" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="120" font-weight="700" fill="#fafbfc" letter-spacing="-3">Spark</text>
+  <text x="450" y="400" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="120" font-weight="700" fill="#ffd06b" letter-spacing="-3">Commit</text>
+
+  <text x="450" y="470" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="400" fill="#fafbfc" opacity="0.7">AI-powered git commit messages for VS Code</text>
+
+  <text x="450" y="520" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="22" font-weight="400" fill="#ffd06b" opacity="0.85">sparkcommit.com</text>
+</svg>
