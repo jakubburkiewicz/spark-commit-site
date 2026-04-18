@@ -1,17 +1,14 @@
 ---
-
+import Base from '../layouts/Base.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base>
+  <main class="mx-auto max-w-3xl px-6 py-20">
+    <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
+      Spark <span class="text-sparkle">Commit</span>
+    </h1>
+    <p class="mt-6 text-lg text-ink-900 dark:text-ink-50">
+      AI-powered git commit messages in VS Code — powered by your own Claude CLI.
+    </p>
+  </main>
+</Base>
